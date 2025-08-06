@@ -1,0 +1,31 @@
+header {
+    padding: 10px;
+    text-align: center;
+    position: sticky;
+}
+
+main {
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.chicken-list {
+    list-style: none;
+    margin: 0 0;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.chicken-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chicken-list-item {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: darkgray;
+}

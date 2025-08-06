@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block content %}
+<h2>Record Management</h2>
+<h4>Chickens</h4>
+<div class="chicken-list">
+  <ul>
+    {% for chicken in chickens %}
+    <div class="chicken-list-item">
+      <li>{{ chicken }}</li>
+    </div>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chicken UI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+    <h1>Chicken UI</h1>
+</header>
+<main>
+    {% block content %}
+    <h2>Welcome to the Chicken Record Management Site</h2>
+    <p>Please click the button below to proceed to the management screen</p>
+    <a href="{{ url_for('records') }}" >Record Management</a>
+    {% endblock %}
+</main>
+</body>
+</html>

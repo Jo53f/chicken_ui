@@ -16,3 +16,6 @@ class Chickens():
         for chicken in self.chickens:
             print(f"{id} : {chicken.get_name()}")
             id += 1
+
+    def return_chickens(self):
+        return self.chickens
