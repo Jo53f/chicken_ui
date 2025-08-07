@@ -33,6 +33,7 @@ main {
 
 .chicken-buttons {
     margin-left: auto;
+    display: flex;
 }
 
 .input-section {
