@@ -1,6 +1,6 @@
 from chicken import Chicken
 from chickens import Chickens
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 app = Flask(__name__)
 
 menu_options = ["Create New Record", "Update Existing Record", "Delete Record"]
@@ -22,4 +22,18 @@ def main_menu():
 
 @app.route("/records")
 def records():
-    return render_template("secondPage.html", chickens=chickens.return_chickens())
+    return render_template("secondPage.html", chickens=enumerate(chickens.return_chickens()))
+
+@app.post("/add")
+def addChicken():
+    name = request.form["chicken-name"].strip()
+    if name:
+        chickens.add_chicken(Chicken(name))
+    return redirect("/records")
+
+@app.post("/delete")
+def deleteChicken():
+    chicken_id = request.form["chicken_id"].strip()
+    chicken_id = int(chicken_id)
+    chickens.remove_chicken(chicken_id)
+    return redirect("/records")

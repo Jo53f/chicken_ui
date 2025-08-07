@@ -4,11 +4,25 @@
 <h4>Chickens</h4>
 <div class="chicken-list">
   <ul>
-    {% for chicken in chickens %}
+    {% for id, chicken in chickens %}
     <div class="chicken-list-item">
       <li>{{ chicken }}</li>
+      <div class="chicken-buttons">
+        
+        <form action="{{ url_for('deleteChicken') }}" method="POST">
+          <input type="hidden" name="chicken_id" value="{{ id }}">
+          <button>Delete</button>
+        </form>
+      </div>
     </div>
     {% endfor %}
   </ul>
+</div>
+<div class="input-section">
+  <form action="{{ url_for('addChicken') }}" method="POST">
+  <label for chicken-name>Add chicken to records</label>
+  <input type="text" id="chicken-name" name="chicken-name">
+  <button type="submit">Add chicken</button>
+</form>
 </div>
 {% endblock %}
