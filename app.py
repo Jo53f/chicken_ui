@@ -37,3 +37,14 @@ def deleteChicken():
     chicken_id = int(chicken_id)
     chickens.remove_chicken(chicken_id)
     return redirect("/records")
+
+@app.post("/update")
+def updateChicken():
+    chicken_id = request.form["chicken_id"].strip()
+    chicken_id = int(chicken_id)
+    new_name = request.form["new_name"].strip()
+
+    if new_name:
+        chickens.change_name(chicken_id, new_name)
+
+    return redirect("/records")
