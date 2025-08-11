@@ -1,3 +1,7 @@
+from chicken import Chicken
+from db_connection import DatabaseConnection
+
+
 class Chickens():
 
     def __init__(self):

@@ -3,13 +3,6 @@ from chickens import Chickens
 
 menu_options = ["Exit", "Print Records", "Create New Record", "Update Existing Record", "Delete Record"]
 
-# A function to add placeholder chickens to the chickens list
-def add_placeholder_chickens(chickens):
-    chicken_names = ["Peter", "Romly", "Tommy", "Jonathan"]
-
-    for name in chicken_names:
-        chickens.add_chicken(Chicken(name))
-
 def menu():
     id = 0
     for option in menu_options:
@@ -36,7 +29,7 @@ def delete_chicken(chickens_object):
     chickens_object.remove_chicken(id)
 
 chickens = Chickens()
-add_placeholder_chickens(chickens)
+
 while(True):
     menu() # Call menu function, to print all available menu options
 
