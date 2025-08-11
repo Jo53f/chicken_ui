@@ -5,16 +5,7 @@ app = Flask(__name__)
 
 menu_options = ["Create New Record", "Update Existing Record", "Delete Record"]
 
-# A function to add placeholder chickens to the chickens list
-def add_placeholder_chickens(chickens):
-    chicken_names = ["Peter", "Romly", "Tommy", "Jonathan"]
-
-    for name in chicken_names:
-        chickens.add_chicken(Chicken(name))
-
-
 chickens = Chickens()
-add_placeholder_chickens(chickens)
 
 @app.route("/")
 def main_menu():
