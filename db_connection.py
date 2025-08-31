@@ -26,7 +26,9 @@ class DatabaseConnection:
 
     def add_to_database(self, chicken):
         self.cursor.execute(f"INSERT INTO chicken (chicken_name) VALUES ('{chicken.get_name()}')")
+        chicken_id = self.cursor.lastrowid # Retrieves the (int) primary key of the last row
         self.connection.commit()
+        return chicken_id
 
     def delete_from_database(self, chicken_id):
         self.cursor.execute(f"DELETE FROM chicken WHERE chicken_id = {chicken_id}")

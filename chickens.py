@@ -2,7 +2,7 @@ from chicken import Chicken
 from db_connection import DatabaseConnection
 
 
-class Chickens():
+class Chickens:
 
     def __init__(self):
         self.chickens = []
@@ -16,8 +16,9 @@ class Chickens():
         self.load_chickens()
 
     def add_chicken(self, chicken):
-        self.database.add_to_database(chicken)
-        self.reload_chickens() # Chickens need to be reloaded due to the database setting IDs
+        chicken_id = self.database.add_to_database(chicken) # Retrieve id assigned by database to set chicken id locally
+        chicken.set_id(chicken_id)
+        self.chickens.append(chicken)
 
     def remove_chicken(self, id):
         chicken = self.chickens.pop(id)
